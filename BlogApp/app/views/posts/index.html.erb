@@ -1,0 +1,21 @@
+  <%= link_to "Create New Post",new_post_path%>
+ 
+  <% @posts.each do |post| %>
+ 
+  <%= post.title %> </br>
+  <div style="padding: 10px;margin: 10px;background-color:#efefef;border:2px solid #aaa">
+  <strong><%= link_to post.title , post_path(post)%></strong>
+  
+  <br/>
+  
+  Category: <%= post.category.name %>
+  
+  <br/>
+  <small>published on: <%= format_date(post.created_at) %></small>
+  
+  <br/>
+  <%=link_to"Delete this post",post_path(post) ,:data=>{ :confirm=>"Are you sure" },:method=>:delete %>
+ 
+ </div> 
+<% end %>
+

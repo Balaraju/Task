@@ -1,0 +1,6 @@
+<h2>Categories</h2>
+
+<%=link_to "view all Categories" ,categories_path %>
+<hr/>
+<h3>Create a new Category</h3>
+<%= render :partial=>"form" %>

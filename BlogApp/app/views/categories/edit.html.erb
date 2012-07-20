@@ -1,0 +1,9 @@
+<h2> Category: <%= @category.name %> </h2>
+
+<%=link_to "View All categories", categories_path %> | 
+
+<%= link_to "Back to the category", category_path(@category) %>
+<hr />
+
+<h3>Edit Category </h3>
+<%= render :partial=>"form" %>

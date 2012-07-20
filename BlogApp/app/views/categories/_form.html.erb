@@ -1,0 +1,25 @@
+<%
+  if @category.new_record?
+    url=categories_path
+    method = :post
+  else
+    url=category_path(@category)
+    method= :put
+  end
+%>
+  <div style ="padding: 10px; background-color: lightyellow; border:2px solid yellow" >
+    <% if @category.errors.any?%>
+      <div id="errors" style="color :red">
+        <h2>Post was not saved due to these errors </h2>
+        <ul>
+          <%@category.errors.full_messages.each do |message|%>
+            <li><%= message %></li>
+          <%end%>
+      
+ <%end %>
+ <%=form_for @category,:url=>url, :method=>method do |c| %>
+
+    Name Of Category :<br/> <%= c.text_field :name %><br/>
+    <%= c.submit "save this record"%>
+  <%end%>
+  </div>
